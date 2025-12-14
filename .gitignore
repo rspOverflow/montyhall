@@ -1,0 +1,40 @@
+### Maven
+# Compiled class files, generated output, and resource files
+target/
+# IntelliJ IDEA and other common IDE files (even though VSCodium is used)
+*.iml
+.idea/
+.mvn/timing.properties
+# Maven-specific files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+### Java
+# Compiled classes
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# JVM crash logs
+hs_err_pid*
+
+### Visual Studio Code
+.vscode/
+
+# History files for testing/debugging
+*.history
