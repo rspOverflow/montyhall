@@ -7,18 +7,18 @@
 # documentation.
 
 name: Java CI with Maven
-
+          
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+          
 jobs:
   build:
-
+          
     runs-on: ubuntu-latest
-
+          
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -28,7 +28,18 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
+      # This command creates the target/montyhall-1.0.jar file
       run: mvn -B package --file pom.xml
+          
+    - name: Upload JAR Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        # Artifact name that will appear in the GitHub run summary
+        name: montyhall-1.0-jar
+        # Target the specific JAR file created by your POM configuration
+        path: target/montyhall-1.0.jar 
+        # Optional: Set the retention days for the artifact
+        retention-days: 7
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
