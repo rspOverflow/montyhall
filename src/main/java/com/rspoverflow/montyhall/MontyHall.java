@@ -103,6 +103,7 @@ public class MontyHall {
       }
     } catch (NumberFormatException e) {
       System.out.println("Please give a proper number that only consists of 0-9 with no punctuation or other symbols.");
+      System.out.println("...Or the number is too big");
       return;
     }
 
